@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <MainContainer>
-        <h1 style={{ color: 'white' }}>#bangersonly</h1>
+        <h1 style={{ color: 'white' }}>#bangerthursday</h1>
         <AddSongForm addSongId={addSongId} />
         <SongCardList songIds={songIds} />
       </MainContainer>
