@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import AddSongForm from './components/AddSongForm';
+import MainContainer from './components/Layout/MainContainer';
+import SongCardList from './components/SongCardList';
+
+const dummySongIds = [
+  '3oiwQKGWKirH1H5qbTsYpG',
+  '1GvyPmmkOxcrnLBjpgFBPX',
+  '4ocvrDYRtLdJVfJRT4ezFS',
+];
 
 function App() {
+  const [songIds, setSongIds] = useState([]);
+
+  useEffect(() => {
+    setSongIds(dummySongIds);
+  }, []);
+
+  const addSongId = (id) => {
+    setSongIds((prevState) => [...prevState, id]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainContainer>
+        <h1 style={{ color: 'white' }}>#bangersonly</h1>
+        <AddSongForm addSongId={addSongId} />
+        <SongCardList songIds={songIds} />
+      </MainContainer>
     </div>
   );
 }
