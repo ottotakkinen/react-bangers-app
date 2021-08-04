@@ -8,11 +8,7 @@ const TrackCardList = ({ tracks }) => {
   return (
     <React.Fragment>
       {sortedTracks.map((track) => (
-        <TrackCard
-          key={track.id}
-          spotifyId={track.spotifyId}
-          user={track.user}
-        />
+        <TrackCard key={track.id} track={track} />
       ))}
     </React.Fragment>
   );
