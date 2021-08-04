@@ -1,13 +1,13 @@
 import React from 'react';
 
-import styles from './SongCard.module.css';
+import styles from './TrackCard.module.css';
 
-const SongCard = ({ songId }) => {
+const TrackCard = ({ spotifyId, user }) => {
   return (
     <div className={styles.container}>
       <iframe
-        title={songId}
-        src={`https://open.spotify.com/embed/track/${songId}`}
+        title={spotifyId}
+        src={`https://open.spotify.com/embed/track/${spotifyId}`}
         width="500"
         height="80"
         frameBorder="0"
@@ -15,11 +15,11 @@ const SongCard = ({ songId }) => {
         allow="encrypted-media"
       ></iframe>
       <div className={styles['info-container']}>
-        <span className={styles.username}>Uploaded by: username</span>
-        <span>1h ago</span>
+        <span className={styles.username}>Added by: {user}</span>
+        <span>Some time ago</span>
       </div>
     </div>
   );
 };
 
-export default SongCard;
+export default TrackCard;

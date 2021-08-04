@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import styles from './AddSongForm.module.css';
+import styles from './AddTrackForm.module.css';
 
 const getIdFromLink = (link) => {
   const idSplitBySlash = link.split('?')[0].split('/');
   return idSplitBySlash[idSplitBySlash.length - 1];
 };
 
-const AddSongForm = ({ addSongId }) => {
+const AddTrackForm = ({ addTrack }) => {
   const [show, setShow] = useState(false);
   const [username, setUsername] = useState('');
 
@@ -15,24 +15,34 @@ const AddSongForm = ({ addSongId }) => {
   // https://open.spotify.com/track/2w2WGSwcfSoZMpA9NKI2lj?si=525228e1bc994060
   const [link, setLink] = useState('');
 
+  const resetForm = () => {
+    setUsername('');
+    setLink('');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!username) {
-      console.log('username cant be empty');
-      return;
-    }
+    // if (!username) {
+    //   console.log('username cant be empty');
+    //   return;
+    // }
 
     if (!link.includes('https://open.spotify.com/track/')) {
       console.log('link invalid');
       return;
     }
 
-    const id = getIdFromLink(link);
-    addSongId(id);
+    const spotifyId = getIdFromLink(link);
+    addTrack(spotifyId, username);
 
-    setUsername('');
-    setLink('');
+    resetForm();
+    setShow(false);
+  };
+
+  const handleCancel = () => {
+    resetForm();
+    setShow(false);
   };
 
   return (
@@ -59,11 +69,13 @@ const AddSongForm = ({ addSongId }) => {
             />
           </div>
           <button>Add</button>
-          <button onClick={() => setShow(false)}>Cancel</button>
+          <button type="button" onClick={handleCancel}>
+            Cancel
+          </button>
         </form>
       )}
     </React.Fragment>
   );
 };
 
-export default AddSongForm;
+export default AddTrackForm;
