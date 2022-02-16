@@ -29,3 +29,4 @@ In our DJ accosiation we have had this #bangerthursday thing for a while now and
 ## Todo
 
 - Querying the songs in smaller batches from the API
+- Creating loaders while the embedded songs load
