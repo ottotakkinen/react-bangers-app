@@ -10,9 +10,9 @@ This project is live on Netlify here:
 
 ## Technologies
 
-React 
-Axios  
-CSS Modules
+- React 
+- Axios  
+- CSS Modules
 
 ## About
 
