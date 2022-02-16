@@ -10,8 +10,8 @@ This project is live on Netlify here:
 
 ## Technologies
 
-React
-axios  
+React 
+Axios  
 CSS Modules
 
 ## About
