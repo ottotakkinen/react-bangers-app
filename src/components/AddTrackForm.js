@@ -49,30 +49,34 @@ const AddTrackForm = ({ addTrack }) => {
     <React.Fragment>
       {!show && <button onClick={() => setShow(true)}>Add song</button>}
       {show && (
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className="">
-            <label htmlFor="username">username</label>
+        <div className={styles.container}>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
             <input
               id="username"
               type="text"
               onChange={(e) => setUsername(e.target.value)}
               value={username}
             />
-          </div>
-          <div className="">
-            <label htmlFor="link">spotify link</label>
+            <label htmlFor="link">Spotify link</label>
             <input
               id="link"
               type="text"
               onChange={(e) => setLink(e.target.value)}
               value={link}
             />
-          </div>
-          <button>Add</button>
-          <button type="button" onClick={handleCancel}>
-            Cancel
-          </button>
-        </form>
+            <div className={styles.buttonContainer}>
+              <button className={styles.primary}>Add</button>
+              <button
+                className={styles.secondary}
+                type="button"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
       )}
     </React.Fragment>
   );

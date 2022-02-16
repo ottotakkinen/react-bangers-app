@@ -1,3 +1,49 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem 2rem;
+}
+
 form {
   color: white;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  font-family: inherit;
+  border-radius: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 100%;
+}
+
+button {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  outline: none;
+  font-size: 1.125rem;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: #222;
+}
+
+.secondary {
+  border: none;
 }
